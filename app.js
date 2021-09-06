@@ -1,4 +1,4 @@
 Ext.application({
-	extend: 'UserList.Application',
-	name: 'UserList'
+  extend: 'UserList.Application',
+  name: 'UserList'
 });
