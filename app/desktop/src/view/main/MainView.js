@@ -54,6 +54,16 @@ Ext.define('UserList.view.main.MainView', {
           filter: 'number',
         },
         {
+          xtype:'templatecolumn',
+          text: 'Initials',
+          tpl: new Ext.XTemplate(
+            '{[this.shortland(values.firstName)]}. {[this.shortland(values.lastName)]}. - {email}',
+            {
+              shortland: val => (val || '').charAt(0).toUpperCase(),
+            },
+          ),
+        },
+        {
           xtype:'actioncolumn',
           text: 'Actions',
           items: [
