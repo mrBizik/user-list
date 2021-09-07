@@ -10,7 +10,6 @@ Ext.define('UserList.components.user.edit.Window', {
     submitButtonText: null,
   },
 
-
   defaultSubmitButtonText: 'Add',
 
   items: [
@@ -74,7 +73,7 @@ Ext.define('UserList.components.user.edit.Window', {
         },
       },
       {
-        close: 'Close',
+        text: 'Close',
         handler: 'closeWindow',
       },
     ];
