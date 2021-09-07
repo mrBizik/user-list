@@ -15,6 +15,9 @@ Ext.define('UserList.view.main.MainView', {
   items: [
     {
       xtype: 'grid',
+      plugins: {
+        gridfilters: true,
+      },
       dockedItems: [
         {
           xtype: 'toolbar',
@@ -32,19 +35,27 @@ Ext.define('UserList.view.main.MainView', {
       },
       columns: [
         {
-          xtype: 'rownumberer'
+          xtype: 'rownumberer',
+          text: '#',
         },
         {
           dataIndex: 'firstName',
+          text: 'First name',
+          filter: 'string',
         },
         {
           dataIndex: 'lastName',
+          text: 'Last name',
+          filter: 'string',
         },
         {
           dataIndex: 'age',
+          text: 'Age',
+          filter: 'number',
         },
         {
           xtype:'actioncolumn',
+          text: 'Actions',
           items: [
             {
               iconCls: 'x-fa fa-pen',
