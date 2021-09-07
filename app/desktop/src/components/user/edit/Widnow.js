@@ -17,31 +17,35 @@ Ext.define('UserList.components.user.edit.Window', {
     {
       xtype: 'form',
       reference: 'form',
+      modelValidation: true,
+      listeners: {
+        validitychange: 'onFormValidityChange'
+      },
       items: [
         {
           xtype: 'textfield',
-          label: 'First name',
+          fieldLabel: 'First name',
           bind: {
             value: '{user.firstName}',
           },
         },
         {
           xtype: 'textfield',
-          label: 'Second name',
+          fieldLabel: 'Second name',
           bind: {
             value: '{user.lastName}',
           },
         },
         {
           xtype: 'numberfield',
-          label: 'Age',
+          fieldLabel: 'Age',
           bind: {
             value: '{user.age}',
           },
         },
         {
           xtype: 'textfield',
-          label: 'Email',
+          fieldLabel: 'Email',
           bind: {
             value: '{user.email}',
           },
@@ -65,6 +69,9 @@ Ext.define('UserList.components.user.edit.Window', {
         text: this.getSubmitButtonText() || this.defaultSubmitButtonText,
         reference: 'submit-button',
         handler: 'submitForm',
+        bind: {
+          disabled: '{!isValid}',
+        },
       },
       {
         close: 'Close',

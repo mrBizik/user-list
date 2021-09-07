@@ -8,6 +8,7 @@ Ext.define('UserList.view.main.MainViewController', {
       listeners: {
         submit: (user) => {
           this.addUser(user);
+          window.close();
         },
       },
     });

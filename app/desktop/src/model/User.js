@@ -8,17 +8,27 @@ Ext.define('UserList.model.User', {
   idProperty: 'guid',
   fields: [
     {
-      name: 'guid',
-      type: 'auto',
-    },
-    {
       name: 'age',
       type: 'integer',
+      validators: [
+        {
+          type: 'presence'
+        },
+        {
+          type: 'range',
+          min: 1,
+        },
+      ],
     },
     {
       name: 'firstName',
       type: 'string',
       mapping: (data) => data.name.first,
+      validators: [
+        {
+          type: 'presence'
+        },
+      ],
     },
     {
       name: 'lastName',
@@ -28,6 +38,14 @@ Ext.define('UserList.model.User', {
     {
       name: 'email',
       type: 'string',
+      validators: [
+        {
+          type: 'presence'
+        },
+        {
+          type: 'email',
+        },
+      ],
     },
   ],
 
@@ -36,9 +54,6 @@ Ext.define('UserList.model.User', {
     url: '/resources/desktop/mates.json',
     reader: {
       type: 'json',
-      // transform: (data) => {
-
-      // }
     },
   },
 });

@@ -20,4 +20,8 @@ Ext.define('UserList.components.user.edit.ViewController', {
   closeWindow: function () {
     this.getView().close();
   },
+
+  onFormValidityChange: function (form, valid) {
+    this.getViewModel().set('isValid', valid);
+  },
 });
