@@ -1,5 +1,6 @@
 /**
  * Окно добавления/редактирования пользователя
+ * @fires submit
  */
 Ext.define('UserList.components.user.edit.Window', {
   extend: 'Ext.window.Window',
@@ -27,7 +28,7 @@ Ext.define('UserList.components.user.edit.Window', {
    * Текст по-умолчанию кнопки отправки данных
    * @type {string}
    */
-  defaultSubmitButtonText: 'Add',
+  defaultSubmitButtonText: UserList.Locales.create,
 
   width: 400,
   padding: 5,
@@ -44,28 +45,28 @@ Ext.define('UserList.components.user.edit.Window', {
       items: [
         {
           xtype: 'textfield',
-          fieldLabel: 'First name',
+          fieldLabel: UserList.Locales.firstName,
           bind: {
             value: '{user.firstName}',
           },
         },
         {
           xtype: 'textfield',
-          fieldLabel: 'Second name',
+          fieldLabel: UserList.Locales.lastName,
           bind: {
             value: '{user.lastName}',
           },
         },
         {
           xtype: 'numberfield',
-          fieldLabel: 'Age',
+          fieldLabel: UserList.Locales.age,
           bind: {
             value: '{user.age}',
           },
         },
         {
           xtype: 'textfield',
-          fieldLabel: 'Email',
+          fieldLabel: UserList.Locales.email,
           bind: {
             value: '{user.email}',
           },
@@ -94,7 +95,7 @@ Ext.define('UserList.components.user.edit.Window', {
         },
       },
       {
-        text: 'Close',
+        text: UserList.Locales.close,
         handler: 'closeWindow',
       },
     ];

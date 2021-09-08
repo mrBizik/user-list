@@ -21,8 +21,8 @@ Ext.define('UserList.view.main.MainView', {
           dock: 'bottom',
           items: [
             {
-              text: 'Add',
-              handler: 'addUserHandler',
+              text: UserList.Locales.create,
+              handler: 'createUserHandler',
             },
           ],
         }
@@ -36,28 +36,27 @@ Ext.define('UserList.view.main.MainView', {
       columns: [
         {
           xtype: 'rownumberer',
-          text: '#',
         },
         {
           dataIndex: 'firstName',
-          text: 'First name',
+          text: UserList.Locales.firstName,
           filter: 'string',
           flex: 3,
         },
         {
           dataIndex: 'lastName',
-          text: 'Last name',
+          text: UserList.Locales.lastName,
           filter: 'string',
           flex: 3,
         },
         {
           dataIndex: 'age',
-          text: 'Age',
+          text: UserList.Locales.age,
           filter: 'number',
         },
         {
           xtype: 'templatecolumn',
-          text: 'Initials',
+          text: UserList.Locales.initials,
           dataIndex: 'firstName',
           flex: 5,
           filter: 'string',
@@ -70,18 +69,18 @@ Ext.define('UserList.view.main.MainView', {
         },
         {
           xtype:'actioncolumn',
-          text: 'Actions',
+          text: UserList.Locales.actions,
           align: 'center',
           items: [
             {
               iconCls: 'x-fa fa-pen',
-              tooltip: 'Edit',
+              tooltip: UserList.Locales.edit,
               handler: 'editUserHandler',
             },
             '->',
             {
               iconCls: 'x-fa fa-trash',
-              tooltip: 'Delete',
+              tooltip: UserList.Locales.delete,
               handler: 'removeUserHandler',
             },
           ],

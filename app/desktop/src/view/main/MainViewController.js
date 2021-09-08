@@ -6,12 +6,12 @@ Ext.define('UserList.view.main.MainViewController', {
   alias: 'controller.mainviewcontroller',
 
   /**
-   * Обработчик кнопки добавления нового пользователя
+   * Обработчик кнопки создания нового пользователя
    */
-  addUserHandler: function () {
+   createUserHandler: function () {
     const window = Ext.create('UserList.components.user.edit.Window', {
-      submitButtonText: 'Add',
-      title: 'Add new user',
+      submitButtonText: UserList.Locales.create,
+      title: UserList.Locales.createNewUser,
       autoShow: true,
       listeners: {
         submit: (user) => {
@@ -28,8 +28,8 @@ Ext.define('UserList.view.main.MainViewController', {
   editUserHandler: function (grid, rowIndex, colIndex, item, e, record) {
     const window = Ext.create('UserList.components.user.edit.Window', {
       user: record.clone(),
-      submitButtonText: 'Edit',
-      title: `Edit ${record.get('firstName')} ${record.get('lastName')}`,
+      submitButtonText: UserList.Locales.edit,
+      title: `${UserList.Locales.edit}: ${record.get('firstName')} ${record.get('lastName')}`,
       autoShow: true,
       listeners: {
         submit: (udpatedUser) => {
