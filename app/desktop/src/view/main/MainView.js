@@ -36,6 +36,19 @@ Ext.define('UserList.view.main.MainView', {
       columns: [
         {
           xtype: 'rownumberer',
+          sortable: false,
+        },
+        {
+          xtype: 'templatecolumn',
+          text: UserList.Locales.avatar,
+          align: 'center',
+          sortable: false,
+          tpl: UserList.Templates.userAvatar().apply({
+            avatar: {
+              src: '/resources/desktop/User.png',
+              alt: 'Avatar',
+            },
+          }),
         },
         {
           dataIndex: 'firstName',
@@ -60,12 +73,7 @@ Ext.define('UserList.view.main.MainView', {
           dataIndex: 'firstName',
           flex: 5,
           filter: 'string',
-          tpl: new Ext.XTemplate(
-            '{[this.shortland(values.firstName)]}. {[this.shortland(values.lastName)]}. - {email}',
-            {
-              shortland: val => (val || '').charAt(0).toUpperCase(),
-            },
-          ),
+          tpl: UserList.Templates.userInitials(),
         },
         {
           xtype:'actioncolumn',

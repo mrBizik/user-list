@@ -15,5 +15,6 @@ Ext.define('UserList.components.Locales', {
     age: 'Age',
     initials: 'Initials',
     actions: 'Actions',
+    avatar: 'Avatar',
   },
 });
