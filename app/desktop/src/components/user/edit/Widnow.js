@@ -11,6 +11,7 @@ Ext.define('UserList.components.user.edit.Window', {
   config: {
     /**
      * Редактируемый пользователь
+     * если равно null, то создается новый пользователь
      * @type {UserList.model.User}
      */
     user: null,
