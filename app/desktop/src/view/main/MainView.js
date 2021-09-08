@@ -1,3 +1,6 @@
+/**
+ * Основное представление приложения
+ */
 Ext.define('UserList.view.main.MainView', {
   extend: 'Ext.Container',
   xtype: 'mainview',
@@ -5,13 +8,7 @@ Ext.define('UserList.view.main.MainView', {
   viewModel: {
     type: 'mainviewmodel'
   },
-  layout: {
-    type: 'vbox',
-    align: 'stretch',
-  },
-  defaults: {
-    flex: 1,
-  },
+  layout: 'fit',
   items: [
     {
       xtype: 'grid',
@@ -33,6 +30,9 @@ Ext.define('UserList.view.main.MainView', {
       bind: {
         store: '{users}',
       },
+      defaults: {
+        flex: 1,
+      },
       columns: [
         {
           xtype: 'rownumberer',
@@ -42,11 +42,13 @@ Ext.define('UserList.view.main.MainView', {
           dataIndex: 'firstName',
           text: 'First name',
           filter: 'string',
+          flex: 3,
         },
         {
           dataIndex: 'lastName',
           text: 'Last name',
           filter: 'string',
+          flex: 3,
         },
         {
           dataIndex: 'age',
@@ -54,8 +56,11 @@ Ext.define('UserList.view.main.MainView', {
           filter: 'number',
         },
         {
-          xtype:'templatecolumn',
+          xtype: 'templatecolumn',
           text: 'Initials',
+          dataIndex: 'firstName',
+          flex: 5,
+          filter: 'string',
           tpl: new Ext.XTemplate(
             '{[this.shortland(values.firstName)]}. {[this.shortland(values.lastName)]}. - {email}',
             {
@@ -66,14 +71,16 @@ Ext.define('UserList.view.main.MainView', {
         {
           xtype:'actioncolumn',
           text: 'Actions',
+          align: 'center',
           items: [
             {
               iconCls: 'x-fa fa-pen',
               tooltip: 'Edit',
               handler: 'editUserHandler',
             },
+            '->',
             {
-              icon: 'x-fa fa-minus',
+              iconCls: 'x-fa fa-trash',
               tooltip: 'Delete',
               handler: 'removeUserHandler',
             },

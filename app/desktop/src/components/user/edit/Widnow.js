@@ -11,12 +11,15 @@ Ext.define('UserList.components.user.edit.Window', {
   },
 
   defaultSubmitButtonText: 'Add',
-
+  width: 400,
+  padding: 5,
+  modal: true,
   items: [
     {
       xtype: 'form',
       reference: 'form',
       modelValidation: true,
+      layout: 'form',
       listeners: {
         validitychange: 'onFormValidityChange'
       },

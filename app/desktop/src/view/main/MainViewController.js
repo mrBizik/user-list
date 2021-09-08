@@ -1,3 +1,6 @@
+/**
+ * ViewController основного представления приложения
+ */
 Ext.define('UserList.view.main.MainViewController', {
   extend: 'Ext.app.ViewController',
   alias: 'controller.mainviewcontroller',
@@ -5,6 +8,7 @@ Ext.define('UserList.view.main.MainViewController', {
   addUserHandler: function () {
     const window = Ext.create('UserList.components.user.edit.Window', {
       submitButtonText: 'Add',
+      title: 'Add new user',
       listeners: {
         submit: (user) => {
           this.addUser(user);
@@ -23,6 +27,7 @@ Ext.define('UserList.view.main.MainViewController', {
       const window = Ext.create('UserList.components.user.edit.Window', {
         user: user.clone(),
         submitButtonText: 'Edit',
+        title: `Edit ${user.get('firstName')} ${user.get('lastName')}`,
         listeners: {
           submit: (user) => {
             this.editUser(user);
