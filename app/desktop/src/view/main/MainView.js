@@ -36,7 +36,7 @@ Ext.define('UserList.view.main.MainView', {
       columns: [
         {
           xtype: 'rownumberer',
-          sortable: false,
+          align: 'center',
         },
         {
           xtype: 'templatecolumn',
