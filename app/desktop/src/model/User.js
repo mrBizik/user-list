@@ -1,3 +1,6 @@
+/**
+ * Модель пользователя
+ */
 Ext.define('UserList.model.User', {
   extend: 'Ext.data.Model',
   requires: ['Ext.data.identifier.Uuid'],

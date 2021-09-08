@@ -1,3 +1,6 @@
+/**
+ * Окно добавления/редактирования пользователя
+ */
 Ext.define('UserList.components.user.edit.Window', {
   extend: 'Ext.window.Window',
   controller: 'components.user.edit',
@@ -6,11 +9,25 @@ Ext.define('UserList.components.user.edit.Window', {
   },
 
   config: {
+    /**
+     * Редактируемый пользователь
+     * @type {UserList.model.User}
+     */
     user: null,
+
+    /**
+     * Текст кнопки отправки данных
+     * @type {string}
+     */
     submitButtonText: null,
   },
 
+  /**
+   * Текст по-умолчанию кнопки отправки данных
+   * @type {string}
+   */
   defaultSubmitButtonText: 'Add',
+
   width: 400,
   padding: 5,
   modal: true,
