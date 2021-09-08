@@ -27,28 +27,18 @@ Ext.define('UserList.model.User', {
       name: 'firstName',
       type: 'string',
       mapping: (data) => data.name.first,
-      validators: [
-        {
-          type: 'presence'
-        },
-      ],
+      validators: ['presence'],
     },
     {
       name: 'lastName',
       type: 'string',
       mapping: (data) => data.name.last,
+      validators: ['presence'],
     },
     {
       name: 'email',
       type: 'string',
-      validators: [
-        {
-          type: 'presence'
-        },
-        {
-          type: 'email',
-        },
-      ],
+      validators: ['presence', 'email'],
     },
   ],
 
