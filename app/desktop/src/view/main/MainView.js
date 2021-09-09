@@ -72,7 +72,6 @@ Ext.define('UserList.view.main.MainView', {
           text: UserList.Locales.initials,
           dataIndex: 'firstName',
           flex: 5,
-          filter: 'string',
           tpl: UserList.Templates.userInitials(),
         },
         {
