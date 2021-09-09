@@ -70,7 +70,6 @@ Ext.define('UserList.view.main.MainView', {
         {
           xtype: 'templatecolumn',
           text: UserList.Locales.initials,
-          dataIndex: 'firstName',
           flex: 5,
           tpl: UserList.Templates.userInitials(),
         },
